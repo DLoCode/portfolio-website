@@ -158,6 +158,10 @@ div {
   font-size: 20px;
 }
 
+.navigation-list__item--active {
+  text-decoration: none;
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
