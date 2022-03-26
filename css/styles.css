@@ -1,0 +1,233 @@
+/*
+colors used
+
+text color and visited link color (dark gray): #2b2b2b;
+primary color (Green): #588a47;
+secondary color (yellow): #f8e55c;
+active link color (light blue): #1de4ef;
+*/
+
+:root {
+  --primary-color: #588a47;
+  --secondary-color: #f8e55c;
+  --dark-grey: #2b2b2b;
+  --al-color: #1de4ef;
+  --bordbot-color: rgba(0, 0, 0, 0.3);
+}
+%page-hf {
+  display: flex;
+}
+
+body {
+  background-color: #588a47;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    /* sets font size to 18px */
+    line-height: 1.8;
+    /*sets line height to 1.6 */
+  }
+
+  %header {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 30px;
+    @extend %header;
+
+  }
+
+  h2 {
+    @extend %header;
+  }
+
+  h3 {
+    @extend %header;
+  }
+
+a {
+  color: var(--secondary-color);
+}
+
+a:visited {
+  /* visited links */
+  color: var(--dark-grey);
+}
+
+a:hover, a:focus {
+  /* no underlining when hovering over a link */
+  text-decoration: none;
+}
+
+a:active {
+  /* selected link */
+  color: var(--al-color);
+}
+
+.button {
+  /* overwrites browser defaults and resets the border */
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  /* styles the background color, font color, and text decoration (underline, etc.) of the button */
+  background-color: var(--secondary-color);
+  color: var(--dark-grey);
+  text-decoration: none;
+  /*adds spacing to the button (this will be discussed more in-depth later) */
+  padding: 10px;
+  border-radius: 3px;
+  /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+  border-bottom: 2px solid var(--bordbot-color);
+  transition: 0.2s opacity;
+}
+
+.button:hover,
+.button:focus {
+  text-decoration: underline;
+  /* mouse turns to hand when hovering */
+  cursor: pointer;
+  /* changes opacity on button hover */
+  opacity: 0.7;
+}
+
+div {
+  padding: 10px; /* adds a 10px inner spacing to all sides */
+  margin: 10px; /* adds a 10 px outer spacing to all sides */
+  border: 1px solid black; /* attributes describe: thickness, thickness, type, color */
+}
+
+.profile__portrait {
+  float: left;
+  width: 250px;
+  height: auto;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+
+.page-footer {
+  display: flex;
+  /* stops the content from flowing around portrait image*/
+  clear: both;
+  flex-direction: column;
+  text-align: center;
+}
+
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+  text-align: center;
+  list-style-type: none;
+}
+
+.page-header {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+}
+.page-header__item {
+  flex: 0 1 200px;
+}
+
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.navigation-list {
+  list-style-type: none;
+  text-align: right;
+  transition: 0.5s font-size;
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin: 15px;
+}
+
+.navigation-list__item:hover,
+.navigation-list__item:focus {
+  font-size: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.grid__item {
+  background-color: #b5b5aa;
+}
+
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+
+@keyframes color-change {
+  from {
+    fill: #edc655;
+  }
+  to {
+    fill: #f76414;
+  }
+}
+
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(446px, 48px);
+  }
+  to{
+    transform: translate(100px, 48px);
+  }
+}
+
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}
