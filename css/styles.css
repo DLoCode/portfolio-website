@@ -15,38 +15,40 @@ active link color (light blue): #1de4ef;
   --bordbot-color: rgba(0, 0, 0, 0.3);
 }
 %page-hf {
-  display: flex;
+  --display: flex;
 }
 
 body {
   background-color: #588a47;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    /* sets font size to 18px */
-    line-height: 1.8;
-    /*sets line height to 1.6 */
-  }
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
 
-  %header {
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.6;
-  }
+  /* sets font size to 18px */
+  line-height: 1.8;
 
-  h1 {
-    font-size: 30px;
-    @extend %header;
+  /* sets line height to 1.8 */
+}
 
-  }
+%header {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.6;
+}
 
-  h2 {
-    @extend %header;
-  }
+h1 {
+  font-size: 30px;
 
-  h3 {
-    @extend %header;
-  }
+  @extend %header;
+}
+
+h2 {
+  @extend %header;
+}
+
+h3 {
+  @extend %header;
+}
 
 a {
   color: var(--secondary-color);
@@ -57,7 +59,8 @@ a:visited {
   color: var(--dark-grey);
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   /* no underlining when hovering over a link */
   text-decoration: none;
 }
@@ -71,15 +74,19 @@ a:active {
   /* overwrites browser defaults and resets the border */
   border: none;
   display: inline-block;
+
   /* takes the font from the outer container */
   font-family: inherit;
+
   /* styles the background color, font color, and text decoration (underline, etc.) of the button */
   background-color: var(--secondary-color);
   color: var(--dark-grey);
   text-decoration: none;
-  /*adds spacing to the button (this will be discussed more in-depth later) */
+
+  /* adds spacing to the button (this will be discussed more in-depth later) */
   padding: 10px;
   border-radius: 3px;
+
   /* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
   border-bottom: 2px solid var(--bordbot-color);
   transition: 0.2s opacity;
@@ -88,8 +95,10 @@ a:active {
 .button:hover,
 .button:focus {
   text-decoration: underline;
+
   /* mouse turns to hand when hovering */
   cursor: pointer;
+
   /* changes opacity on button hover */
   opacity: 0.7;
 }
@@ -110,7 +119,8 @@ div {
 
 .page-footer {
   display: flex;
-  /* stops the content from flowing around portrait image*/
+
+  /* stops the content from flowing around portrait image */
   clear: both;
   flex-direction: column;
   text-align: center;
@@ -133,6 +143,7 @@ div {
   padding: 20px;
   margin: 0 auto;
 }
+
 .page-header__item {
   flex: 0 1 200px;
 }
@@ -178,7 +189,7 @@ div {
   }
 }
 
-@media all and (min-width: 500px) and (max-width: 750px){
+@media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -188,10 +199,12 @@ div {
   .grid {
     grid-gap: 10px;
   }
+
   .grid__item:last-child {
     grid-column: auto / auto;
     grid-row: auto / auto;
   }
+
   h1 {
     font-size: 22px;
   }
@@ -201,6 +214,7 @@ div {
   from {
     fill: #edc655;
   }
+
   to {
     fill: #f76414;
   }
@@ -214,6 +228,7 @@ div {
   from {
     transform: translate(0, 50px);
   }
+
   to {
     transform: translate(200px, 50px);
   }
@@ -227,7 +242,8 @@ div {
   from {
     transform: translate(446px, 48px);
   }
-  to{
+
+  to {
     transform: translate(100px, 48px);
   }
 }
