@@ -11,15 +11,13 @@ active link color (light blue): #1de4ef;
   --primary-color: #588a47;
   --secondary-color: #f8e55c;
   --dark-grey: #2b2b2b;
+  --light-green: #cdcc;
   --al-color: #1de4ef;
   --bordbot-color: rgba(0, 0, 0, 0.3);
 }
-%page-hf {
-  --display: flex;
-}
 
 body {
-  background-color: #588a47;
+  background-color: var(--primary-color);
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -30,24 +28,14 @@ body {
   /* sets line height to 1.8 */
 }
 
-%header {
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.6;
-}
-
 h1 {
   font-size: 30px;
-
-  @extend %header;
 }
 
 h2 {
-  @extend %header;
-}
-
-h3 {
-  @extend %header;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.6;
 }
 
 a {
@@ -180,7 +168,7 @@ div {
 }
 
 .grid__item {
-  background-color: #b5b5aa;
+  background-color: var(--light-green);
 }
 
 @media all and (max-width: 500px) {
@@ -203,10 +191,6 @@ div {
   .grid__item:last-child {
     grid-column: auto / auto;
     grid-row: auto / auto;
-  }
-
-  h1 {
-    font-size: 22px;
   }
 }
 
