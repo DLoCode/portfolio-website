@@ -153,6 +153,10 @@ div {
   color: var(--dark-grey);
 }
 
+.navigation-list__item {
+  color: var(--dark-grey);
+}
+
 .navigation-list__item:hover,
 .navigation-list__item:focus {
   font-size: 20px;
