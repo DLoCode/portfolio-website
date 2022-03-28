@@ -173,7 +173,6 @@ div {
 .navigation-list li {
   display: inline-block;
   margin: 15px;
-  color: var(--dark-grey);
 }
 
 .navigation-list__item {
